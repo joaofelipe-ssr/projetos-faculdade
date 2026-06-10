@@ -1,7 +1,0 @@
-{
-    "code-runner.clearPreviousOutput": true,
-    "code-runner.executorMap": {
-        "javascript": "node",
-        "typescript": "npx sucrase-node",
-    }
-}
