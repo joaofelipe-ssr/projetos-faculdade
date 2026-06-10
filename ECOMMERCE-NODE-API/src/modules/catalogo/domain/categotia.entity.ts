@@ -1,0 +1,48 @@
+import { ICategoria, CriarCategoriaProps } from "./categoria.types";
+
+class Categoria implements ICategoria {
+    //ATRIBUTOS
+    private _id: string;
+    private _nome: string;
+
+    //GETTERS E SETTERS
+    public get id(): string {
+        return this._id;
+    }
+
+    private set id(value: string) {
+        this._id = value;
+    }
+
+    public get nome(): string {
+        return this._nome;
+    }
+
+    private set nome(value: string) {
+        if(value === null || value === undefined) {
+            throw new Error("Nome da categoria é nulo ou indefinido");
+        }
+        if(value.trim().length < 3) {
+            throw new Error("Nome da categoria não possui um tamanho mínimo válido");
+        }
+        if(value.trim().length > 50) {
+            throw new Error("Nome da categoria não possui um tamanho máximo válido");
+        }
+        this._nome = value;
+    }
+
+    //CONSTRUTOR
+    private constructor(categoria: ICategoria) {
+        this._id = categoria.id;
+        this._nome = categoria.nome;
+    }
+
+    //STATIC FACTORY METHOD
+    public static criar(props: CriarCategoriaProps): Categoria {
+        let id = "12345"; //REFATORAR PARA GERAR UM ID COM UUID
+        let { nome } = props;
+        return new Categoria({ id, nome });
+    }
+}
+
+export { Categoria };
