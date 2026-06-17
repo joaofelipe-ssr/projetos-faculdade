@@ -19,7 +19,7 @@ class Categoria implements ICategoria {
     }
 
     private set nome(value: string) {
-        if(value === null || value === undefined) {
+        if(value === null || value === undefined || value.trim().length === 0) {
             throw new Error("Nome da categoria é nulo ou indefinido");
         }
         if(value.trim().length < 3) {
@@ -33,8 +33,8 @@ class Categoria implements ICategoria {
 
     //CONSTRUTOR
     private constructor(categoria: ICategoria) {
-        this._id = categoria.id;
-        this._nome = categoria.nome;
+        this.id = categoria.id;
+        this.nome = categoria.nome;
     }
 
     //STATIC FACTORY METHOD
