@@ -1,4 +1,5 @@
 import { ICategoria, CriarCategoriaProps } from "./categoria.types";
+import { NomeCategoriaNuloOuIndefinido, NomeCategoriaTamanhoMinimoInvalido, NomeCategoriaTamanhoMaximoInvalido } from "./categoria.exception";
 
 class Categoria implements ICategoria {
     //ATRIBUTOS
@@ -20,13 +21,13 @@ class Categoria implements ICategoria {
 
     private set nome(value: string) {
         if(value === null || value === undefined || value.trim().length === 0) {
-            throw new Error("Nome da categoria é nulo ou indefinido");
+            throw new NomeCategoriaNuloOuIndefinido();
         }
         if(value.trim().length < 3) {
-            throw new Error("Nome da categoria não possui um tamanho mínimo válido");
+            throw new NomeCategoriaTamanhoMinimoInvalido();
         }
         if(value.trim().length > 50) {
-            throw new Error("Nome da categoria não possui um tamanho máximo válido");
+            throw new NomeCategoriaTamanhoMaximoInvalido();
         }
         this._nome = value;
     }
