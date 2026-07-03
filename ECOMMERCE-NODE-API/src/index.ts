@@ -4,7 +4,7 @@ import { DomainException } from "./shared/domain/domain.exception";
 //TESTES
 try {
     let categoria: Categoria;
-    categoria = Categoria.criar({ nome: 'cama' });
+    categoria = Categoria.criar({ nome: 'café' });
     console.log(categoria);
 } 
 catch (error:any) {

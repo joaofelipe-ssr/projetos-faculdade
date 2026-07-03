@@ -12,7 +12,7 @@ describe('Entidade de Domínio: Categoria', () => {
 
         //Dado (Given)
         const categoriaValida: CriarCategoriaProps = {
-            nome: 'cama'
+            nome: 'café'
         };
 
         //Quando (When) e Então (Then)
@@ -40,7 +40,7 @@ describe('Entidade de Domínio: Categoria', () => {
         //Dado (Given)
         //Nome maior que 50 caracteres
         const categoriaNomeInvalido: CriarCategoriaProps = {
-            nome: 'caaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+            nome: 'cafeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeé'
         };
 
         //Quando (When) e Então (Then)
