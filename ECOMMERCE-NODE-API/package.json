@@ -44,7 +44,7 @@
     "test:ui": "vitest --ui"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.4",
     "@vitest/ui": "^4.1.9",
     "sucrase": "^3.35.1",
     "typescript": "^6.0.3",
